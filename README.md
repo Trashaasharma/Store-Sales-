@@ -69,3 +69,5 @@ The last two are included to show why they are **not useful** here: 4,991 of 5,0
 
 1. In MySQL Workbench, create the database and import your copy of the sales file into a table called `Sales` (Table Data Import Wizard): `CREATE DATABASE IF NOT EXISTS Store_sales;`
 2. Open `PortfolioProject_Store_Sales.sql` and run each query on its own. The first query should return 1425452.61, 5000, 285.09, 3.78, 15.0, 99.8 and 99.3.
+
+Data- https://www.kaggle.com/datasets/hassanjameelahmed/store-sales

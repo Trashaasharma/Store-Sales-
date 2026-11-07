@@ -28,17 +28,19 @@ It is a practice dataset, not data from a real business. Nothing here describes 
 
 The last two are included to show why they are **not useful** here: 4,991 of 5,000 orders carry a discount, and 4,967 customers have bought before. The analysis therefore compares discount depth and loyalty bands instead.
 
-## Excel dashboard
+## Dashboard
 
-![Excel dashboard](store_sales_dashboard.png)
-
-[`Store_Sales_Dashboard.xlsx`](Store_Sales_Dashboard.xlsx) turns the results into one page: six KPI cards and five charts, each titled with its finding. Pick a **Season** and a **Payment** method in the yellow cells and every card and chart updates; pick a **Spotlight** category to see one category on its own. Every figure is a live formula on the 5,000-row `Data` sheet, and the totals match query 1 of the SQL file (the check is on the `About` sheet).
-
-## Power BI dashboard
+**Power BI** - six KPI cards, three dropdown filters (season, payment method and category) and five charts, each titled with its finding.
 
 ![Power BI dashboard](powerbi_dashboard.png)
 
-One report page built in the Power BI service (the browser version) on the same 5,000 rows: six KPI cards, three dropdown filters (season, payment method and category) and five charts, each titled with its finding. Three short DAX measures (orders share, revenue share and Electronics revenue share) divide a category's total by the total of all categories. The cards match the SQL and Excel results: revenue 1,425,452.61, 5,000 orders, average order value 285.09, average rating 3.78, average discount 15.0% and Electronics 62.8% of revenue. The report file itself is not included, only the picture.
+Built in the Power BI service (the browser version) on the same 5,000 rows. Three short DAX measures (orders share, revenue share and Electronics revenue share) divide a category's total by the total of all categories. The cards match the SQL and Excel results: revenue 1,425,452.61, 5,000 orders, average order value 285.09, average rating 3.78, average discount 15.0% and Electronics 62.8% of revenue. The report file itself is not included, only the picture.
+
+**Excel** - the same results on one page, with six KPI cards, five charts and filters.
+
+![Excel dashboard](store_sales_dashboard.png)
+
+[`Store_Sales_Dashboard.xlsx`](Store_Sales_Dashboard.xlsx) turns the results into one page. Pick a **Season** and a **Payment** method in the yellow cells and every card and chart updates; pick a **Spotlight** category to see one category on its own. Every figure is a live formula on the 5,000-row `Data` sheet, and the totals match query 1 of the SQL file (the check is on the `About` sheet).
 
 ## Findings
 

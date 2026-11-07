@@ -2,7 +2,7 @@
 
 An SQL analysis of a 5,000-order store sales file, written in MySQL. It calculates headline KPIs, compares them across product, customer and payment groups, and checks which differences are real.
 
-> **Status:** the SQL analysis is complete. Excel and Power BI dashboards are in progress.
+> **Status:** the SQL analysis, the Excel dashboard and the Power BI dashboard are complete.
 
 ## The question
 
@@ -10,7 +10,7 @@ An SQL analysis of a 5,000-order store sales file, written in MySQL. It calculat
 
 ## Data
 
-A 5,000-row file with one row per customer order: `CustomerID`, `Age`, `Gender`, `Category`, `ItemPurchased`, `Amount`, `Season`, `PaymentMethod`, `ItemRating`, `DiscountApplied(%)`, `PreviousPurchases`. The file has no blanks or duplicate rows. The raw file is not included in this repository. The file does not state a currency, a date or a cost, so results are revenue only, not profit, and there is no trend over time.
+A 5,000-row file with one row per customer order: `CustomerID`, `Age`, `Gender`, `Category`, `ItemPurchased`, `Amount`, `Season`, `PaymentMethod`, `ItemRating`, `DiscountApplied(%)`, `PreviousPurchases`. The file has no blanks or duplicate rows. The CSV is not included as a separate file, but the same 5,000 rows are on the `Data` sheet of the Excel workbook. The file does not state a currency, a date or a cost, so results are revenue only, not profit, and there is no trend over time.
 
 It is a practice dataset, not data from a real business. Nothing here describes a real company's sales.
 
@@ -27,6 +27,18 @@ It is a practice dataset, not data from a real business. Nothing here describes 
 | Share of orders from customers with previous purchases | 99.3% |
 
 The last two are included to show why they are **not useful** here: 4,991 of 5,000 orders carry a discount, and 4,967 customers have bought before. The analysis therefore compares discount depth and loyalty bands instead.
+
+## Excel dashboard
+
+![Excel dashboard](store_sales_dashboard.png)
+
+[`Store_Sales_Dashboard.xlsx`](Store_Sales_Dashboard.xlsx) turns the results into one page: six KPI cards and five charts, each titled with its finding. Pick a **Season** and a **Payment** method in the yellow cells and every card and chart updates; pick a **Spotlight** category to see one category on its own. Every figure is a live formula on the 5,000-row `Data` sheet, and the totals match query 1 of the SQL file (the check is on the `About` sheet).
+
+## Power BI dashboard
+
+![Power BI dashboard](powerbi_dashboard.png)
+
+One report page built in the Power BI service (the browser version) on the same 5,000 rows: six KPI cards, three dropdown filters (season, payment method and category) and five charts, each titled with its finding. Three short DAX measures (orders share, revenue share and Electronics revenue share) divide a category's total by the total of all categories. The cards match the SQL and Excel results: revenue 1,425,452.61, 5,000 orders, average order value 285.09, average rating 3.78, average discount 15.0% and Electronics 62.8% of revenue. The report file itself is not included, only the picture.
 
 ## Findings
 
@@ -64,10 +76,11 @@ The last two are included to show why they are **not useful** here: 4,991 of 5,0
 | File | What it is |
 |---|---|
 | [`PortfolioProject_Store_Sales.sql`](PortfolioProject_Store_Sales.sql) | 12 MySQL queries: seven KPIs, then comparisons by category, item, season, age, gender, payment, loyalty and discount |
+| [`Store_Sales_Dashboard.xlsx`](Store_Sales_Dashboard.xlsx) | One-page Excel dashboard with filters, plus `About` (definitions, check against the SQL), `Dash_Data` (formulas) and `Data` (the 5,000 rows) |
+| [`store_sales_dashboard.png`](store_sales_dashboard.png) | Picture of the Excel dashboard shown above |
+| [`powerbi_dashboard.png`](powerbi_dashboard.png) | Picture of the Power BI page shown above |
 
 ## How to run
 
 1. In MySQL Workbench, create the database and import your copy of the sales file into a table called `Sales` (Table Data Import Wizard): `CREATE DATABASE IF NOT EXISTS Store_sales;`
 2. Open `PortfolioProject_Store_Sales.sql` and run each query on its own. The first query should return 1425452.61, 5000, 285.09, 3.78, 15.0, 99.8 and 99.3.
-
-Data- https://www.kaggle.com/datasets/hassanjameelahmed/store-sales

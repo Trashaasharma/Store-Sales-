@@ -10,9 +10,8 @@ An SQL analysis of a 5,000-order store sales file, written in MySQL. It calculat
 
 ## Data
 
-A 5,000-row file with one row per customer order: `CustomerID`, `Age`, `Gender`, `Category`, `ItemPurchased`, `Amount`, `Season`, `PaymentMethod`, `ItemRating`, `DiscountApplied(%)`, `PreviousPurchases`. The file has no blanks or duplicate rows. The CSV is not included as a separate file, but the same 5,000 rows are on the `Data` sheet of the Excel workbook. The file does not state a currency, a date or a cost, so results are revenue only, not profit, and there is no trend over time.
+A 5,000-row file with one row per customer order: `CustomerID`, `Age`, `Gender`, `Category`, `ItemPurchased`, `Amount`, `Season`, `PaymentMethod`, `ItemRating`, `DiscountApplied(%)`, `PreviousPurchases`. 
 
-It is a practice dataset, not data from a real business. Nothing here describes a real company's sales.
 
 ## Headline KPIs
 
